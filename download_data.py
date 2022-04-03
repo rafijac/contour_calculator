@@ -3,7 +3,7 @@ from datetime import date
 
 url = 'https://oceandata.sci.gsfc.nasa.gov/directaccess/MODIS-Aqua/Mapped/8-Day/9km/chlor_a/'
 
-
+# todo make generic for different os and add overaly to tell the difference
 def download_data(start_date, end_date, interval, netcdf_dir):
     # https://gist.github.com/aolinto/1a54c5d35b5f1bc5f96a4f363a64956f
     cmd = """wget -q --post-data="sensor=aqua&sdate={}&edate={}8&dtype=L3m&addurl=1&results_as_file=1&search=A*L3m_{}_CHL_chlor_a_4km.nc" -O - https://oceandata.sci.gsfc.nasa.gov/api/file_search \
